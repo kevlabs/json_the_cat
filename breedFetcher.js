@@ -6,7 +6,7 @@ const userInput = new Promise((resolve, reject) => {
   console.log('Enter breed name');
   process.stdin.once('data', breed => {
     breed = breed.toString().trim();
-    if (!breed) {
+    if (breed) {
       resolve(breed);
     } else {
       reject('Incorrect breed syntax');
@@ -27,7 +27,7 @@ const userInput = new Promise((resolve, reject) => {
       rejectPromise = reject;
     });
 
-    request(`https://api.thecatapi.com/v1/breeds/search?q=${breed}`, (error, response, body) => {
+    request(`https://api.thecatapi.com/v1/breeds/search?q=${encodeURIComponent(breed)}`, (error, response, body) => {
 
       const settlePromise = (resolve, reject) => {
         if (error || !response || response.statusCode !== 200) {

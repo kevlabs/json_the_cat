@@ -6,7 +6,7 @@ const userInput = new Promise((resolve, reject) => {
   console.log('Enter breed info');
   process.stdin.once('data', breed => {
     breed = breed.toString().trim();
-    if (typeof breed === 'string' && breed.length === 3) {
+    if (breed.length === 4) {
       resolve(breed);
     } else {
       reject('Incorrect breed syntax');

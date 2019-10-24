@@ -2,7 +2,7 @@
   "name": "json_the_cat",
   "version": "1.0.0",
   "description": "",
-  "main": "breedFetcher.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,5 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2"
   }
 }

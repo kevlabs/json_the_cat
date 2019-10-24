@@ -3,10 +3,10 @@ const request = require('request');
 
 //ask for breed
 const userInput = new Promise((resolve, reject) => {
-  console.log('Enter breed info');
+  console.log('Enter breed name');
   process.stdin.once('data', breed => {
     breed = breed.toString().trim();
-    if (breed.length === 4) {
+    if (!breed) {
       resolve(breed);
     } else {
       reject('Incorrect breed syntax');
